@@ -24,16 +24,21 @@
 # *.lai
 # *.la
 # *.a
-# *.lib
+# *.libs
 
 # Executables
 # *.exe
 # *.out
 # *.app
-.idea/
 desktop.ini
 
 # build
-cmake-build-debug/
 build/
 
+#Visual Studio
+.VS/
+
+
+#CLion
+.idea/
+cmake-build-debug/

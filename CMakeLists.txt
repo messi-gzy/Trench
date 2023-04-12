@@ -36,14 +36,22 @@ SET(
         ${PROJECT_BINARY_DIR}/lib
 )
 
+
 # 添加头文件目录
 #include_directories(
-#        ${PROJECT_SOURCE_DIR}/lib/spdlog/include
-#        ${PROJECT_SOURCE_DIR}/lib/jsoncpp/include
+#        ${PROJECT_SOURCE_DIR}/libs/spdlog/include
+#        ${PROJECT_SOURCE_DIR}/libs/jsoncpp/include
 #)
 
 # 添加子目录
-add_subdirectory(./lib)
-#add_subdirectory(./src/network)
+add_subdirectory(libs)
 add_subdirectory(extra)
+add_subdirectory(src)
 add_subdirectory(test)
+
+file(
+        COPY
+        ${PROJECT_SOURCE_DIR}/include
+        DESTINATION
+        ${PROJECT_BINARY_DIR}
+)

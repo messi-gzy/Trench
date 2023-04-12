@@ -3,10 +3,11 @@ include_directories(
 )
 
 set(
-        SOURCE_MD5
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/md5.cpp
+        SOURCE_RSA
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/rsa.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/encrypt.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/decode.cpp
 )
-
 target_include_directories(
         trench_crypto
         PUBLIC
@@ -16,5 +17,5 @@ target_include_directories(
 target_sources(
         trench_crypto
         PUBLIC
-        ${SOURCE_MD5}
+        ${SOURCE_RSA}
 )

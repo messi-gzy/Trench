@@ -48,10 +48,24 @@ add_subdirectory(libs)
 add_subdirectory(extra)
 add_subdirectory(src)
 add_subdirectory(test)
-
+#头文件
 file(
         COPY
         ${PROJECT_SOURCE_DIR}/include
+        DESTINATION
+        ${PROJECT_BINARY_DIR}
+)
+#配置文件
+file(
+        COPY
+        ${PROJECT_SOURCE_DIR}/conf
+        DESTINATION
+        ${PROJECT_BINARY_DIR}
+)
+#文档说明
+file(
+        COPY
+        ${PROJECT_SOURCE_DIR}/doc
         DESTINATION
         ${PROJECT_BINARY_DIR}
 )

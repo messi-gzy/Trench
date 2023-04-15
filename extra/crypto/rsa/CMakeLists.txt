@@ -1,10 +1,5 @@
-include_directories(
-        ./include
-)
-
 set(
         SOURCE_RSA
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/rsa.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/encrypt.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/decode.cpp
 )

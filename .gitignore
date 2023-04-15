@@ -42,3 +42,7 @@ build/
 #CLion
 .idea/
 cmake-build-debug/
+
+#extra
+extra/crypto/build/
+extra/crypto/test.cpp

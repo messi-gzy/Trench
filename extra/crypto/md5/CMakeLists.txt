@@ -1,7 +1,3 @@
-include_directories(
-        ./include
-)
-
 set(
         SOURCE_MD5
         ${CMAKE_CURRENT_SOURCE_DIR}/src/md5.cpp

@@ -3,7 +3,7 @@ include_directories(
 )
 
 add_library(
-        json
+        trench_json
         SHARED
         ./src/json_reader.cpp
         ./src/json_value.cpp

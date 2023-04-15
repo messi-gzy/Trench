@@ -7,34 +7,74 @@ include_directories(
 link_directories(
         ${CMAKE_BINARY_DIR}/bin
 )
-
+# test_md5
 add_executable(
-        test_cpp
-        test_cpp.cpp
+        test_md5
+        extra/crypto/test_md5.cpp
 )
 
-target_link_libraries(
-        test_cpp
-        trench_crypto.dll
+# test_rsa
+add_executable(
+        test_rsa
+        extra/crypto/test_rsa.cpp
 )
 
 ## …Ë÷√ ‰≥ˆ¬∑æ∂
 IF (WIN32)
+#    target_link_libraries(
+#            test_md5
+#            trench_crypto.dll
+#    )
+#    set_target_properties(
+#            test_md5
+#            PROPERTIES
+#            RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+#    )
+    target_link_libraries(
+            test_rsa
+            trench_crypto.dll
+    )
     set_target_properties(
-        test_cpp
-        PROPERTIES
-        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
-)
+            test_rsa
+            PROPERTIES
+            RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+    )
 ELSEIF (APPLE)
+    target_link_libraries(
+            test_md5
+            trench_crypto.so
+    )
     set_target_properties(
-        test_cpp
-        PROPERTIES
-        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/test
-)
+            test_md5
+            PROPERTIES
+            RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/test
+    )
+    target_link_libraries(
+            test_rsa
+            trench_crypto.so
+    )
+    set_target_properties(
+            test_rsa
+            PROPERTIES
+            RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+    )
 ELSEIF (UNIX)
+    target_link_libraries(
+            test_md5
+            trench_crypto.so
+    )
     set_target_properties(
-        test_cpp
-        PROPERTIES
-        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/test
-)
+            test_md5
+            PROPERTIES
+            RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/test
+    )
+    target_link_libraries(
+            test_rsa
+            trench_crypto.so
+    )
+    set_target_properties(
+            test_rsa
+            PROPERTIES
+            RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+    )
 ENDIF ()

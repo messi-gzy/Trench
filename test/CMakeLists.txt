@@ -21,15 +21,15 @@ add_executable(
 
 ## …Ë÷√ ‰≥ˆ¬∑æ∂
 IF (WIN32)
-#    target_link_libraries(
-#            test_md5
-#            trench_crypto.dll
-#    )
-#    set_target_properties(
-#            test_md5
-#            PROPERTIES
-#            RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
-#    )
+    target_link_libraries(
+            test_md5
+            trench_crypto.dll
+    )
+    set_target_properties(
+            test_md5
+            PROPERTIES
+            RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+    )
     target_link_libraries(
             test_rsa
             trench_crypto.dll

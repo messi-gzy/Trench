@@ -65,7 +65,7 @@ file(
 #ÎÄµµËµÃ÷
 file(
         COPY
-        ${PROJECT_SOURCE_DIR}/doc
+        ${PROJECT_SOURCE_DIR}/docs
         DESTINATION
         ${PROJECT_BINARY_DIR}
 )

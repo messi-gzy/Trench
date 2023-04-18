@@ -1,3 +1,12 @@
+// Created by MaXin on 2023/4/11.
+/**
+ * @file key_pair.cpp
+ * @brief Details about the key pair
+ * See the header file for the method description
+ * @date 2023/4/11
+ * @authors {@author MaXin @author gzy}
+ */
+
 #include "key_pair.h"
 
 KeyPair::KeyPair(int num_plaintext, int num_E, int num_N) {

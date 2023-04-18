@@ -1,6 +1,7 @@
 // Created by MaXin on 2023/4/11
 /**
  * @file encrypt.cpp
+ * @brief See the header file for the method description
  */
 #include "encrypt.h"
 
@@ -26,6 +27,7 @@ int Encrypt::GetPrime(int number) {
     } else {
         const int maxNumber = 10000;
         int cnt = 0;
+        /* Use heap area to ease stack area */
         int *primes = new int[number];
         bool *status = new bool[number];
         for (size_t i = 0; i < number; i++) {
@@ -74,11 +76,37 @@ int Encrypt::GetNumberD(int number_E, int number_L) {
     return number_D;
 }
 
-bool Encrypt::EncryptAlgorithm(KeyPair &keyPair) { 
+bool Encrypt::EncryptAlgorithm(KeyPair &keyPair) {
     int ciphertext = 0;
     ciphertext = KeyPair::GetCountMod(
         KeyPair::GetCountExp(keyPair.GetPlaintext(), keyPair.GetNumberE()),
         keyPair.GetNumberN());
-    keyPair.SetCiphertext(ciphertext); 
+    keyPair.SetCiphertext(ciphertext);
+    return true;
+}
+
+bool Encrypt::DecryptAlgorithm(KeyPair &keyPair) {
+    int plaintext = 0;
+    plaintext = KeyPair::GetCountMod(
+        KeyPair::GetCountExp(keyPair.Getciphertext(), keyPair.GetNumberD()),
+        keyPair.GetNumberN());
+    keyPair.SetPlaintext(plaintext);
+    return true;
+}
+
+bool Encrypt::RandomKeypair(int *arr) {
+    /* rand()%a+b indicates that an integer ranging from b to (a+b-1) is
+     * generated */
+    /* num_p or num_q is randomly generated prime number ,the other numbers are
+     * the temporary value needed to generate the key pair*/
+    int num_P = rand() % 5 + 35, num_Q = num_P + 6;
+    cout << num_P << num_Q << endl;
+    int num_N = num_P * num_Q;
+    int num_L = Encrypt::Lcm(num_P - 1, num_Q - 1);
+    int num_E = Encrypt::GetNumberE(num_L);
+    int num_D = Encrypt::GetNumberD(num_E, num_L);
+    arr[0] = num_E;
+    arr[1] = num_D;
+    arr[2] = num_N;
     return true;
 }

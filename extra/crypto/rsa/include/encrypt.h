@@ -5,14 +5,10 @@
  * @date 2023/4/11
  * @authors {@author MaXin @author gzy}
  */
-#ifndef EXTRA_CRYPTO_ENCRYPT_H
-#define EXTRA_CRYPTO_ENCRYPT_H
+#ifndef EXTRA_CRYPTO_RSA_ENCRYPT_H
+#define EXTRA_CRYPTO_RSA_ENCRYPT_H
 
 #include "key_pair.h"
-
-#include <algorithm>
-#include <iostream>
-#include <cmath>
 
 /* Encryption class of the rsa cryptographic algorithm
  * Including prime number acquisition, encryption key and decryption key
@@ -42,11 +38,14 @@ class Encrypt {
     /* encryption algorithm */
     static bool EncryptAlgorithm(KeyPair &keyPair);
 
+    /* decryption algorithm */
+    static bool DecryptAlgorithm(KeyPair &keyPair);
+
+    /* Randomly generate a key pair
+     * @return array point <int>{E,D,N} */
+    static bool RandomKeypair(int *arr);
+
    private:
-    // int num_N;// N
-    // int num_L;// L
-    // int num_E;// E (E,N) public key
-    // int num_D;// D (D,N) private key
 };
 
 #endif  // EXTRA_CRYPTO_ENCRYPT_H

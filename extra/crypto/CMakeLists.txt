@@ -6,3 +6,4 @@ add_library(
 
 add_subdirectory(rsa)
 add_subdirectory(md5)
+add_subdirectory(des)

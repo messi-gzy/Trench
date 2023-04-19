@@ -99,8 +99,8 @@ bool Encrypt::RandomKeypair(int *arr) {
      * generated */
     /* num_p or num_q is randomly generated prime number ,the other numbers are
      * the temporary value needed to generate the key pair*/
-    int num_P = rand() % 5 + 35, num_Q = num_P + 6;
-    cout << num_P << num_Q << endl;
+    int num_P = rand() % 5 + 30, num_Q = num_P + 6;
+    cout << num_P << " " << num_Q << endl;
     int num_N = num_P * num_Q;
     int num_L = Encrypt::Lcm(num_P - 1, num_Q - 1);
     int num_E = Encrypt::GetNumberE(num_L);

@@ -37,7 +37,7 @@ vector<int> Decode::EncryptStr(const string str,int number_E, int number_N) {
             Encrypt::EncryptAlgorithm(keypair);
             vector_ciphertext.push_back(keypair.Getciphertext());
         } else {
-            KeyPair keypair(temp, 7, 1643);
+            KeyPair keypair(temp, number_E, number_N);
             Encrypt::EncryptAlgorithm(keypair);
             vector_ciphertext.push_back(keypair.Getciphertext());
         }

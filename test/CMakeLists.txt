@@ -2,12 +2,11 @@ include_directories(
         ${PROJECT_SOURCE_DIR}/libs/jsoncpp/include
         ${PROJECT_SOURCE_DIR}/extra/crypto/md5/include
         ${PROJECT_SOURCE_DIR}/extra/crypto/rsa/include
-	  ${PROJECT_SOURCE_DIR}/extra/crypto/des/include
+	    ${PROJECT_SOURCE_DIR}/extra/crypto/des/include
 )
 
-link_directories(
-        ${CMAKE_BINARY_DIR}/bin
-)
+link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
+
 # test_md5
 add_executable(
         test_md5
@@ -26,7 +25,7 @@ add_executable(
         extra/crypto/test_des.cpp
 )
 
-## out_path
+# out_path
 IF (WIN32)
     target_link_libraries(
             test_md5
@@ -112,3 +111,5 @@ ELSEIF (UNIX)
             RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/test
     )
 ENDIF ()
+
+

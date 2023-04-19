@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-# ���ñ�����
+# compiler
 IF (WIN32)
     message("windows")
     SET(SYSTEM_NAME windows)
@@ -26,24 +26,19 @@ IF (CMAKE_CXX_COMPILER_LOADED)
     message(STATUS "The C++ compiler version is: ${CMAKE_CXX_COMPILER_VERSION}")
 ENDIF ()
 
-## �������·��
-SET(
-        CMAKE_RUNTIME_OUTPUT_DIRECTORY
-        ${PROJECT_BINARY_DIR}/bin
-)
-SET(
-        CMAKE_ARCHIVE_OUTPUT_DIRECTORY
-        ${PROJECT_BINARY_DIR}/lib
-)
+# .lib|.a
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+
+# .so|.dll
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+# .exe|.out
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 
 
-# ���ͷ�ļ�Ŀ¼
-#include_directories(
-#        ${PROJECT_SOURCE_DIR}/libs/spdlog/include
-#        ${PROJECT_SOURCE_DIR}/libs/jsoncpp/include
-#)
-
-# �����Ŀ¼
+# subdirectory
 add_subdirectory(libs)
 add_subdirectory(extra)
 add_subdirectory(src)
@@ -51,21 +46,22 @@ add_subdirectory(test)
 
 add_dependencies(test_md5 trench_crypto)
 add_dependencies(test_rsa trench_crypto)
-#ͷ�ļ�
+add_dependencies(test_des trench_crypto)
+# copy include
 file(
         COPY
         ${PROJECT_SOURCE_DIR}/include
         DESTINATION
         ${PROJECT_BINARY_DIR}
 )
-#�����ļ�
+# copy conf
 file(
         COPY
         ${PROJECT_SOURCE_DIR}/conf
         DESTINATION
         ${PROJECT_BINARY_DIR}
 )
-#�ĵ�˵��
+# copy docs
 file(
         COPY
         ${PROJECT_SOURCE_DIR}/docs

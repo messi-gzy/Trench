@@ -44,9 +44,7 @@ add_subdirectory(extra)
 add_subdirectory(src)
 add_subdirectory(test)
 
-add_dependencies(test_md5 trench_crypto)
-add_dependencies(test_rsa trench_crypto)
-add_dependencies(test_des trench_crypto)
+add_dependencies(test_crypto TrenchCrypto)
 # copy include
 file(
         COPY

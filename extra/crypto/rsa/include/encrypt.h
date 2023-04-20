@@ -48,4 +48,4 @@ class Encrypt {
    private:
 };
 
-#endif  // EXTRA_CRYPTO_ENCRYPT_H
+#endif  // EXTRA_CRYPTO_RSA_ENCRYPT_H

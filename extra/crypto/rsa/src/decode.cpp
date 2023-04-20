@@ -13,20 +13,6 @@ Decode::Decode() {}
 
 Decode::~Decode() {}
 
-vector<unsigned char> Decode::EncodeGBK(const string str) {
-    vector<unsigned char> buff;
-    int len = str.length();
-    buff.resize(len);
-    memcpy(&buff[0], str.c_str(), len);
-    return buff;
-};
-
-string Decode::DecodeGBK(vector<unsigned char> buff) {
-    vector<unsigned char> debuf = buff;
-    debuf.resize(buff.size() + 1);
-    string str = (char *)&debuf[0];
-    return str;
-};
 
 vector<int> Decode::EncryptStr(const string str,int number_E, int number_N) {
     vector<int> vector_ciphertext;

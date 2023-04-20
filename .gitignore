@@ -34,6 +34,7 @@ desktop.ini
 
 # build
 build/
+out/
 
 #Visual Studio
 .VS/
@@ -45,4 +46,6 @@ cmake-build-debug/
 
 #extra
 extra/crypto/build/
+extra/crypto/out/
+extra/crypto/.vs/
 extra/crypto/test.cpp

@@ -14,8 +14,6 @@ class Decode {
    public:
     Decode();
     virtual ~Decode();
-    vector<unsigned char> EncodeGBK(const string str);
-    string DecodeGBK(vector<unsigned char> buff);
     /* Encryptographic string */
     vector<int> EncryptStr(const string str, int number_E, int number_N);
     /* Decryptographic string */

@@ -8,4 +8,14 @@
 #ifndef TRENCH_EXTRA_DES_ITERATE_ENCRYPT_H
 #define TRENCH_EXTRA_DES_ITERATE_ENCRYPT_H
 
+class IterateEncrypt
+{
+private:
+public:
+    IterateEncrypt() = default;
+    virtual ~IterateEncrypt();
+};
+
+
+
 #endif //TRENCH_EXTRA_DES_ITERATE_ENCRYPT_H

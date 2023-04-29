@@ -4,7 +4,7 @@ include_directories(
 
 add_library(
         TrenchJson
-        SHARED
+        STATIC
         ./src/json_reader.cpp
         ./src/json_value.cpp
         ./src/json_valueiterator.inl

@@ -6,3 +6,7 @@
  * 
  */
 #include "iterate_encrypt.h"
+
+IterateEncrypt::~IterateEncrypt()
+{
+}

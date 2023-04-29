@@ -7,4 +7,7 @@
 #ifndef TRENCH_EXTRA_CRYPTO_DES_H
 #define TRENCH_EXTRA_CRYPTO_DES_H
 
+#include "secret_key.h"
+
+
 #endif //TRENCH_EXTRA_CRYPTO_DES_H

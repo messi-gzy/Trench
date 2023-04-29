@@ -1,23 +1,27 @@
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 # compiler
 IF (WIN32)
-    message("windows")
-    SET(SYSTEM_NAME windows)
-    SET(CMAKE_C_COMPILER gcc)
-    SET(CMAKE_CXX_COMPILER g++)
+	set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+#     message("windows")
+#     SET(SYSTEM_NAME windows)
+#     SET(CMAKE_C_COMPILER gcc)
+#     SET(CMAKE_CXX_COMPILER g++)
 ELSEIF (APPLE)
-    message("apple")
-    SET(SYSTEM_NAME apple)
-    SET(CMAKE_C_COMPILER clang)
-    SET(CMAKE_CXX_COMPILER clang++)
+#     message("apple")
+#     SET(SYSTEM_NAME apple)
+#     SET(CMAKE_C_COMPILER clang)
+#     SET(CMAKE_CXX_COMPILER clang++)
 ELSEIF (UNIX)
-    message("unix")
-    SET(SYSTEM_NAME unix)
-    SET(CMAKE_C_COMPILER gcc)
-    SET(CMAKE_CXX_COMPILER g++)
+#     message("unix")
+#     SET(SYSTEM_NAME unix)
+#     SET(CMAKE_C_COMPILER gcc)
+#     SET(CMAKE_CXX_COMPILER g++)
 ENDIF ()
 
 PROJECT(Trench LANGUAGES CXX)
+
+
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 IF (CMAKE_CXX_COMPILER_LOADED)
     message(STATUS "The C++ compiler is: ${CMAKE_CXX_COMPILER}")
@@ -44,7 +48,13 @@ add_subdirectory(extra)
 add_subdirectory(src)
 add_subdirectory(test)
 
+# Specifies the library generation order
+
 add_dependencies(test_crypto TrenchCrypto)
+add_dependencies(TrenchCrypto TrenchJson)
+add_dependencies(TrenchJson gtest)
+add_dependencies(TrenchJson gtest_main)
+
 # copy include
 file(
         COPY

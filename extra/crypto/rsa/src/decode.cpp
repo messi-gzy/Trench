@@ -9,12 +9,9 @@
 
 #include "decode.h"
 
-Decode::Decode() {}
-
 Decode::~Decode() {}
 
-
-vector<int> Decode::EncryptStr(const string str,int number_E, int number_N) {
+vector<int> Decode::EncryptStr(const string str, int number_E, int number_N) {
     vector<int> vector_ciphertext;
     for (int i = 0; i < str.size(); i++) {
         int temp = str.at(i) - '0';
@@ -30,6 +27,18 @@ vector<int> Decode::EncryptStr(const string str,int number_E, int number_N) {
     }
     return vector_ciphertext;
 }
+
+string Decode::TransfromStr(vector<int> array) {
+    string temp;
+    
+    return temp;
+}
+
+vector<int> Decode::TransfromVector(const string &str) {
+    vector<int> temp;
+    return temp;
+}
+
 string Decode::DecryptStr(vector<int> buff, int number_D, int number_N) {
     string str_plaintext;
     for (size_t i = 0; i < buff.size(); i++) {

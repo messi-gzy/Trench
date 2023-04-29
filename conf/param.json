@@ -1,0 +1,16 @@
+{
+    "name": "",
+    "authors": [
+        "MaXin",
+        "Matebook13",
+        "gzy",
+        "messi"
+    ],
+    "email": "2073147469@qq.com",
+    "github": "https://github.com/messi-gzy/Trench.git",
+    "version": {
+        "TRENCH_VERSION_MAJOR": 0,
+        "TRENCH_VERSION_MINOR": 0,
+        "TRENCH_VERSION_PATCH": 1
+    }
+}

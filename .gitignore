@@ -38,11 +38,13 @@ out/
 
 #Visual Studio
 .VS/
-
+.vscode/
 
 #CLion
 .idea/
 cmake-build-debug/
+vscode-build/
+sln-build/
 
 #extra
 extra/crypto/build/

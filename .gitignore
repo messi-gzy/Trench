@@ -53,4 +53,8 @@ extra/crypto/.vs/
 extra/crypto/.vscode/
 extra/crypto/test.cpp
 
+#test
+test/
+libs/googletest/
+
 

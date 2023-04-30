@@ -46,14 +46,12 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 add_subdirectory(libs)
 add_subdirectory(extra)
 add_subdirectory(src)
-add_subdirectory(test)
 
 # Specifies the library generation order
 
 add_dependencies(test_crypto TrenchCrypto)
 add_dependencies(TrenchCrypto TrenchJson)
-add_dependencies(TrenchJson gtest)
-add_dependencies(TrenchJson gtest_main)
+
 
 # copy include
 file(

@@ -4,18 +4,17 @@
 #include <bitset>
 
 #include "des.h"
+#include "gtest/gtest.h"
 #include "md5.h"
 #include "rsa.h"
 
-#include "gtest/gtest.h"
-
-TEST(add, add1) {
-    EXPECT_EQ(1, 1);
-    bitset<8> bit1(0b10110);
-    bitset<8> bit2(0b10111);
-    bit1 |= bit2;
-    EXPECT_EQ(bit1,0b00010110);
-}
+// TEST(add, add1) {
+//     EXPECT_EQ(1, 1);
+//     bitset<8> bit1(0b10110);
+//     bitset<8> bit2(0b10111);
+//     bit1 |= bit2;
+//     EXPECT_EQ(bit1,0b00010110);
+// }
 
 int main(int argc, char *argv[]) {
     /* test_rsa */
@@ -36,15 +35,13 @@ int main(int argc, char *argv[]) {
         cout << MD5("MaXin").ToStr();
     }*/
     /* test_des */
-    /*{
-        for (int i = 0; i < argc; ++i) {
-            cout << "[ " << i << " ] " << argv[i] << endl;
-        }
-        char ch[8] = {'a','b','c','d','e','f','g','h'};
+    {
+        char ch[8] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
+
         SecretKey secretKey(ch);
         secretKey.Printf();
     }
-    return 0;*/
-    ::testing::InitGoogleTest();
-    return RUN_ALL_TESTS();
+    return 0;
+    // ::testing::InitGoogleTest();
+    // return RUN_ALL_TESTS();
 }

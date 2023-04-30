@@ -15,7 +15,12 @@ IF (WIN32)
             extra/crypto/test_crypto.cpp
             ${PROJECT_SOURCE_DIR}/assets/app.rc
     )
-ELSEIF ()
+ELSEIF (UNIX)
+    set(
+            TEST_CRYPTO_SOURCE
+            extra/crypto/test_crypto.cpp
+    )
+ELSEIF (MACOS)
     set(
             TEST_CRYPTO_SOURCE
             extra/crypto/test_crypto.cpp
@@ -41,7 +46,7 @@ IF (WIN32)
                 test_crypto
                 TrenchCrypto
         )
-    ELSEIF ()
+    ELSE ()
         target_link_libraries(
                 test_crypto
                 TrenchCrypto.dll

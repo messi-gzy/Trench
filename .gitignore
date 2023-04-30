@@ -47,10 +47,6 @@ vscode-build/
 sln-build/
 
 #extra
-extra/crypto/build/
-extra/crypto/out/
-extra/crypto/.vs/
-extra/crypto/.vscode/
 extra/crypto/test.cpp
 
 

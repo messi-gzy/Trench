@@ -1,31 +1,34 @@
 /*
  * @file secret_key.cpp
- * @authors { MaXin , MateBook13 }
- * @date 2023/4/20
- * @brief ....
+ * @authors { MaXin , MateBook13 , gzy }
+ * @date 2023-04-30
+ * @email 2073147469@qq.com
+ * @github https://github.com/messi-gzy/Trench.git
+ * @brief .
  *
  */
 #include "secret_key.h"
 
-
-SecretKey::SecretKey(const char secret_key[8]) {
+SecretKey::SecretKey(const char str_secret_key[8]) {
+    bitset<64> bit_temp;
     for (int i = 0; i < 8; i++) {
-        bitset<8> bitChar(secret_key[i]);
-        for (int j = 0; j < 8; j++) {
-            this->ch_secret_key[i][j] = bitChar.test(j);
-        }
+        bit_temp = str_secret_key[i] - '0';
+        this->bit_initial_key <<= 8;
+        this->bit_initial_key |= bit_temp;
     }
 }
 
 SecretKey::~SecretKey() {}
 
-bool SecretKey::ReplaceOne() { return true; }
-
-void SecretKey::Printf() {
-    for (int i = 0; i < 8; i++) {
-        for (int j = 0; j < 8; j++) {
-            cout << this->ch_secret_key[i][j] << " ";
+bool SecretKey::ReplaceOne() {
+    bitset<64> bit_temp;
+    for (int i = 0; i < 56; i++) {
+        if (this->bit_initial_key[substitution_table::replaceOne[i]]) {
+            
         }
-        printf("\n");
     }
+
+    return true;
 }
+
+void SecretKey::Printf() { cout << this->bit_initial_key << endl; }

@@ -49,4 +49,8 @@ sln-build/
 #extra
 extra/crypto/test.cpp
 
+#test
+test/
+libs/googletest/
+
 

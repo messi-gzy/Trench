@@ -11,6 +11,8 @@
 #ifndef TRENCH_MD5_H
 #define TRENCH_MD5_H
 
+#include "export.h"
+
 /* Parameters of MD5. */
 #define s11 7
 #define s12 12
@@ -90,7 +92,7 @@ typedef unsigned char Byte;
 /* Define of Byte. */
 typedef unsigned int Bit32;
 
-class MD5 {
+class TRENCH_EXPORT MD5 {
 public:
     /* Construct a MD5 object with a string. */
     MD5(const string &message);

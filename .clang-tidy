@@ -22,7 +22,7 @@ CheckOptions:
   - key:             readability-identifier-naming.FunctionCase
     value:           CamelCase
   - key:             readability-identifier-naming.VariableCase
-    value:           camelBack
+    value:           camel_back
   - key:             readability-identifier-naming.ConstantCase
     value:           camelBack
   - key:             readability-function-size.StatementThreshold

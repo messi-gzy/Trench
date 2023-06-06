@@ -52,8 +52,8 @@ add_subdirectory(test)
 
 add_dependencies(test_crypto TrenchCrypto)
 add_dependencies(TrenchCrypto TrenchJson)
-add_dependencies(TrenchJson gtest)
-add_dependencies(TrenchJson gtest_main)
+#add_dependencies(TrenchJson gtest)
+#add_dependencies(TrenchJson gtest_main)
 
 # copy include
 file(

@@ -5,9 +5,6 @@
  */
 #include "encrypt.h"
 
-// Encrypt::Encrypt() {}
-
-Encrypt::~Encrypt() {}
 
 int Encrypt::Gcd(int x, int y) {
     int z = y;
@@ -22,7 +19,7 @@ int Encrypt::Gcd(int x, int y) {
 int Encrypt::Lcm(int x, int y) { return (x * y) / Encrypt::Gcd(x, y); }
 
 int Encrypt::GetPrime(int number) {
-    if (number <= 10) {
+    if (number <= 10 || number >= 10000) {
         return -1;
     } else {
         const int maxNumber = 10000;
@@ -79,8 +76,8 @@ int Encrypt::GetNumberD(int number_E, int number_L) {
 bool Encrypt::EncryptAlgorithm(KeyPair &keyPair) {
     int ciphertext = 0;
     ciphertext = KeyPair::GetCountMod(
-        KeyPair::GetCountExp(keyPair.GetPlaintext(), keyPair.GetNumberE()),
-        keyPair.GetNumberN());
+            KeyPair::GetCountExp(keyPair.GetPlaintext(), keyPair.GetNumberE()),
+            keyPair.GetNumberN());
     keyPair.SetCiphertext(ciphertext);
     return true;
 }
@@ -88,17 +85,22 @@ bool Encrypt::EncryptAlgorithm(KeyPair &keyPair) {
 bool Encrypt::DecryptAlgorithm(KeyPair &keyPair) {
     int plaintext = 0;
     plaintext = KeyPair::GetCountMod(
-        KeyPair::GetCountExp(keyPair.Getciphertext(), keyPair.GetNumberD()),
-        keyPair.GetNumberN());
+            KeyPair::GetCountExp(keyPair.GetCiphertext(), keyPair.GetNumberD()),
+            keyPair.GetNumberN());
     keyPair.SetPlaintext(plaintext);
     return true;
 }
 
 bool Encrypt::RandomKeypair(int *arr) {
     /* rand()%a+b indicates that an integer ranging from b to (a+b-1) is
-     * generated */
+     * generated
+     *
+     * rand()%a+b表示随机生成从b到(a+b-1)的整数是*/
     /* num_p or num_q is randomly generated prime number ,the other numbers are
-     * the temporary value needed to generate the key pair*/
+     * the temporary value needed to generate the key pair
+     *
+     * num_p或num_q是随机生成的素数，其他数字是生成密钥对所需的临时值*/
+
     int num_P = rand() % 2 + 30, num_Q = num_P + 2;
     cout << num_P << " " << num_Q << endl;
     int num_N = num_P * num_Q;

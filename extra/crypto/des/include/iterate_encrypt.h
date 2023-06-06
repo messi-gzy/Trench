@@ -8,7 +8,9 @@
 #ifndef TRENCH_EXTRA_DES_ITERATE_ENCRYPT_H
 #define TRENCH_EXTRA_DES_ITERATE_ENCRYPT_H
 
-class IterateEncrypt
+#include "secret_key.h"
+
+class TRENCH_EXPORT IterateEncrypt
 {
 private:
 public:

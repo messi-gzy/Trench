@@ -9,8 +9,6 @@
 
 #include "decode.h"
 
-Decode::~Decode() {}
-
 vector<int> Decode::EncryptStr(const string str, int number_E, int number_N) {
     vector<int> vector_ciphertext;
     for (int i = 0; i < str.size(); i++) {
@@ -18,24 +16,25 @@ vector<int> Decode::EncryptStr(const string str, int number_E, int number_N) {
         if (temp <= 0) {
             KeyPair keypair(temp + 500, number_E, number_N);
             Encrypt::EncryptAlgorithm(keypair);
-            vector_ciphertext.push_back(keypair.Getciphertext());
+            vector_ciphertext.push_back(keypair.GetCiphertext());
         } else {
             KeyPair keypair(temp, number_E, number_N);
             Encrypt::EncryptAlgorithm(keypair);
-            vector_ciphertext.push_back(keypair.Getciphertext());
+            vector_ciphertext.push_back(keypair.GetCiphertext());
         }
     }
     return vector_ciphertext;
 }
 
-string Decode::TransfromStr(vector<int> array) {
+string Decode::TransformStr(vector<int> array) {
     string temp;
-    
+    for (int i = 0; i < array.size(); ++i) {}
     return temp;
 }
 
-vector<int> Decode::TransfromVector(const string &str) {
+vector<int> Decode::TransformVector(string &str) {
     vector<int> temp;
+    str = "vector";
     return temp;
 }
 

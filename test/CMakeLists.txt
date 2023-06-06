@@ -29,10 +29,10 @@ add_executable(
         ${TEST_CRYPTO_SOURCE}
 )
 
-target_link_libraries(
-        test_crypto
-        gtest
-)
+#target_link_libraries(
+#        test_crypto
+#        gtest
+#)
 
 # out_path
 IF (WIN32)

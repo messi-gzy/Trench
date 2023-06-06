@@ -11,6 +11,8 @@
 
 #include "substitution_table.h"
 
+#include "export.h"
+
 #include <bitset>
 #include <iostream>
 
@@ -20,7 +22,7 @@ using std::cout;
 using std::endl;
 
 /* Generation of SecretKey */
-class SecretKey {
+class TRENCH_EXPORT SecretKey {
 private:
     int ch_secret_key[8][8];
     

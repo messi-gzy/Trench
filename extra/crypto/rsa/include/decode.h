@@ -10,10 +10,10 @@
 
 #include "encrypt.h"
 
-class Decode {
+class TRENCH_EXPORT Decode {
 public:
     Decode() = default;
-    virtual ~Decode();
+    virtual ~Decode() = default;
     /* Encryptographic string ,return vector<int>*/
     vector<int> EncryptStr(const string str, int number_E, int number_N);
 
@@ -22,10 +22,10 @@ public:
 
 private:
     /* <int>Vector to string */
-    string TransfromStr(vector<int> array);
+    string TransformStr(vector<int> array);
 
     /* string to <int>Vector */
-    vector<int> TransfromVector(const string &str);
+    vector<int> TransformVector(string &str);
 };
 
 #endif

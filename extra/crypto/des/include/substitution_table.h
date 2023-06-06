@@ -11,7 +11,7 @@
 #ifndef TRENCH_EXTRA_CRYPTO_DES_TABLE_H
 #define TRENCH_EXTRA_CRYPTO_DES_TABLE_H
 
-namespace substitution_table {
+namespace  substitution_table {
 /* Key replacement Table 1 */
 static int replaceOne[56] = {
     57, 49, 41, 33, 25, 17, 9,  1,  58, 50, 42, 34, 26, 18, 10, 2,  59, 51, 43,

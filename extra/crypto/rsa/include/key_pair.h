@@ -8,6 +8,8 @@
 #ifndef EXTRA_CRYPTO_RSA_KEYPAIR_H
 #define EXTRA_CRYPTO_RSA_KEYPAIR_H
 
+#include "export.h"
+
 #include <algorithm>
 #include <cmath>
 #include <iostream>
@@ -20,28 +22,45 @@ using std::vector;
 using std::cout;
 using std::endl;
 
-class KeyPair {
-   public:
+class TRENCH_EXPORT KeyPair {
+public:
     /* encrypt */
     KeyPair(int num_plaintext, int num_E, int num_N);
+
     /* decrypt */
     KeyPair(bool status, int num_ciphertext, int num_D, int num_N);
-    bool SetPlaintext(int plaintext);
-    bool SetCiphertext(int ciphertext);
-    int GetPlaintext();
-    int Getciphertext();
-    int GetNumberE();
-    int GetNumberD();
-    int GetNumberN();
-    /* Sum of large numbers */
-    static string GetCountAdd(string a, string b);
-    /* Exponents of large numbers */
-    static string GetCountExp(int x, int y);
-    /* Take the remainder of a large number */
-    static int GetCountMod(string a, int b);
+
     virtual ~KeyPair();
 
-   private:
+    bool SetPlaintext(int plaintext);
+
+    bool SetCiphertext(int ciphertext);
+
+    int GetPlaintext();
+
+    int GetCiphertext();
+
+    int GetNumberE();
+
+    int GetNumberD();
+
+    int GetNumberN();
+
+    /* Sum of large numbers */
+    /* 大数相加 */
+
+    static string GetCountAdd(string a, string b);
+    /* Exponents of large numbers */
+    /* 大数相乘 */
+
+    static string GetCountExp(int x, int y);
+    /* Take the remainder of a large number */
+    /* 大数取余 */
+
+    static int GetCountMod(string a, int b);
+
+
+private:
     int num_plaintext;
     int num_ciphertext;
     int num_E;

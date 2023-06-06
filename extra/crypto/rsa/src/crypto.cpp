@@ -13,12 +13,22 @@
 namespace trench {
     std::vector<int> Crypto::EncryptStr(const std::string str, int number_E, int number_N) {
         Decode decode;
-        return decode.EncryptStr(str,number_E,number_N);
+        return decode.EncryptStr(str, number_E, number_N);
+    }
+
+    std::vector<int> Crypto::EncryptStr(const std::string str, int *arr) {
+        Decode decode;
+        return decode.EncryptStr(str, arr[0], arr[2]);
     }
 
     std::string Crypto::DecryptStr(std::vector<int> buff, int number_D, int number_N) {
         Decode decode;
-        return decode.DecryptStr(buff,number_D,number_N);
+        return decode.DecryptStr(buff, number_D, number_N);
+    }
+
+    std::string Crypto::DecryptStr(std::vector<int> buff, int *arr) {
+        Decode decode;
+        return decode.DecryptStr(buff, arr[1], arr[2]);
     }
 
     bool Crypto::RandomKeypair(int *arr) {

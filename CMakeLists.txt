@@ -48,8 +48,6 @@ add_subdirectory(extra)
 add_subdirectory(src)
 
 # Specifies the library generation order
-
-add_dependencies(test_crypto TrenchCrypto)
 add_dependencies(TrenchCrypto TrenchJson)
 
 

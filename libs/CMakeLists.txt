@@ -1,3 +1,2 @@
 add_subdirectory(jsoncpp)
 #add_subdirectory(spdlog)
-add_subdirectory(googletest)

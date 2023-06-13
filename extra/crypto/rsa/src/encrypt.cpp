@@ -92,17 +92,18 @@ bool Encrypt::DecryptAlgorithm(KeyPair &keyPair) {
 }
 
 bool Encrypt::RandomKeypair(int *arr) {
-    /* rand()%a+b indicates that an integer ranging from b to (a+b-1) is
-     * generated
-     *
-     * rand()%a+b表示随机生成从b到(a+b-1)的整数是*/
-    /* num_p or num_q is randomly generated prime number ,the other numbers are
-     * the temporary value needed to generate the key pair
-     *
-     * num_p或num_q是随机生成的素数，其他数字是生成密钥对所需的临时值*/
+    // Initializes the random number seed
+    srand(time(nullptr));
 
-    int num_P = rand() % 2 + 30, num_Q = num_P + 2;
-    cout << num_P << " " << num_Q << endl;
+    /* rand()%a+b indicates that an integer ranging from b to (a+b-1) is
+     * generated */
+    /* num_p or num_q is randomly generated prime number ,the other numbers are
+     * the temporary value needed to generate the key pair */
+
+    int p = rand() % 20 + 30 , q = rand() % 20 + 40;
+    int num_P = GetPrime(p), num_Q = GetPrime(q);
+    cout << p << "\t" << q<< endl;
+    cout << num_P << "\t" << num_Q << endl;
     int num_N = num_P * num_Q;
     int num_L = Encrypt::Lcm(num_P - 1, num_Q - 1);
     int num_E = Encrypt::GetNumberE(num_L);

@@ -3,13 +3,13 @@ set(
         ${CMAKE_CURRENT_SOURCE_DIR}/src/path.cpp
 )
 target_include_directories(
-        TrenchTools
+        trench_tools
         PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 target_sources(
-        TrenchTools
+        trench_tools
         PUBLIC
         ${SOURCE_SYSTEM}
 )

@@ -16,6 +16,7 @@
 #include <string>
 #include <vector>
 #include <cstdlib>
+#include <ctime>
 
 using std::string;
 using std::vector;
@@ -47,16 +48,12 @@ public:
     int GetNumberN();
 
     /* Sum of large numbers */
-    /* 大数相加 */
-
     static string GetCountAdd(string a, string b);
+
     /* Exponents of large numbers */
-    /* 大数相乘 */
-
     static string GetCountExp(int x, int y);
-    /* Take the remainder of a large number */
-    /* 大数取余 */
 
+    /* Take the remainder of a large number */
     static int GetCountMod(string a, int b);
 
 

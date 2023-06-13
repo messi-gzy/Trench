@@ -1,5 +1,5 @@
 add_library(
-        TrenchTools
+        trench_tools
         STATIC
         ""
 )

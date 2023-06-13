@@ -3,13 +3,13 @@ set(
         ${CMAKE_CURRENT_SOURCE_DIR}/src/structure.cpp
 )
 target_include_directories(
-        TrenchStructure
+        trench_structure
         PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 target_sources(
-        TrenchStructure
+        trench_structure
         PUBLIC
         ${SOURCE_STACK}
 )

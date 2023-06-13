@@ -5,13 +5,13 @@ set(
         ${CMAKE_CURRENT_SOURCE_DIR}/src/crypto.cpp
 )
 target_include_directories(
-        TrenchCrypto
+        trench_crypto
         PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 target_sources(
-        TrenchCrypto
+        trench_crypto
         PUBLIC
         ${SOURCE_DES}
 )
